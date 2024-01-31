@@ -1,0 +1,73 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial;
+}
+
+.container
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.main-chart
+{
+    min-height: 300px;
+    display: flex;
+}
+
+.main-chart__category
+{
+    position: relative;
+    width: 100%;
+    background: red;
+    border: 1px solid black;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-chart__category:hover
+{
+    opacity: .8;
+}
+
+.main-chart__category-name  
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.pathbar
+{
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.pathbar input
+{
+    width: 100%;
+    padding: 8px;
+}
+
+.pathbar a button
+{
+    height: 100%;
+}
+
+.pathbar button
+{
+    padding: 0 8px;
+}

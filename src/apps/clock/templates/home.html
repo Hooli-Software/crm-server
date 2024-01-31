@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Core - Dashboard
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    Welcome to dashboard!
+</div>
+<div class="container">
+    <p>
+        <div class="pathbar">
+            {% if object.parent %}
+                <a href="{% url 'clock:home' object.parent.id %}">
+                    <button>BACK</button>
+                </a>
+            {% endif %}
+            <input type="text" placeholder="current directory" value="{{object.path}}">
+            <button>GO</button>
+        </div>
+    </p>
+    <br>
+    <div class="main-chart">
+        {% for child in object.children.all %}
+            <a href='{% url 'clock:home' child.id %}' class="main-chart__category">
+                <div class="main-chart__category-name">
+                    {{ child.name }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
